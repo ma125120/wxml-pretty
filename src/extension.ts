@@ -6,20 +6,25 @@ export function activate(context: vscode.ExtensionContext) {
     "wxml-pretty.format",
     () => {
       const doc = vscode.window.activeTextEditor?.document;
-      const { uri, getText, languageId, save } = doc || {};
+      const { uri, getText, languageId, save, fileName } = doc || {};
+      
       save().then(() => {
-        const isOpen = vscode.workspace
-          .getConfiguration()
-          .get(`wxml-pretty.format`);
+        const config = vscode.workspace
+          .getConfiguration();
+        const isOpen = config.get(`wxml-pretty.format`);
+        const maxWidth: number = config.get(`wxml-pretty.maxWidth`);
         if (isOpen) {
-          if (languageId !== "wxml") {
+          if (languageId !== "wxml" && !/\.wxml$/g.test(fileName)) {
             return;
           }
 
-          const ast = parse(getText());
-          const content = generate(ast, { compress: false });
-
-          vscode.workspace.fs.writeFile(uri, Buffer.from(content, "utf8"));
+          try {
+            const ast = parse(getText());
+            const content = generate(ast, { compress: false, maxWidth });
+            vscode.workspace.fs.writeFile(uri, Buffer.from(content, "utf8"));
+          } catch (err) {
+            vscode.window.showErrorMessage(err.message);
+          }  
         }
       });
 

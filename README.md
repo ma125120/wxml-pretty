@@ -13,7 +13,8 @@
 或在当前工作目录下的 ```.vscode/settings.json``` 文件中添加
 ```json
 {
-  "wxml-pretty.format":true
+  "wxml-pretty.format": true,
+  "wxml-pretty.maxWidth": 120, // 属性宽度大于该值时将会换行
 }
 ```
 开启保存自动格式化

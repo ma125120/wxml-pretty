@@ -9,7 +9,7 @@
     "wxml",
     "pretty"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "files": [
     "out"
   ],
@@ -32,6 +32,11 @@
           "type": "boolean",
           "default": false,
           "description": "是否在保存时，自动格式化wxml文件"
+        },
+        "wxml-pretty.maxWidth": {
+          "type": "number",
+          "default": 120,
+          "description": "属性最大宽度，超过后就会换行展示"
         }
       }
     },
