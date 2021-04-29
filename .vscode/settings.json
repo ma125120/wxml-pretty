@@ -1,0 +1,62 @@
+{
+  "editor.formatOnSave": true, // 保存自动格式化
+  "eslint.enable": true, // 启用eslint
+  "eslint.format.enable": true, // 启用eslint格式化
+  "eslint.workingDirectories": [
+    "./common"
+  ],
+  "minapp-vscode.wxmlFormatter": "wxml", // 使用minapp默认格式化方式处理wxml
+  "minapp-vscode.reserveTags": [
+    // 忽略格式化的标签， text标签格式化会引起换行和空格的问题
+    "text",
+    "wxs"
+  ],
+  "files.associations": {
+    // 特定文件处理方式
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+    // "*.wxml": "html",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "html.format.enable": false,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "minapp-vscode.decorateComplexInterpolation": false,
+  "minapp-vscode.disableCustomComponentAutocomponent": true,
+  "minapp-vscode.formatMaxLineCharacters": 180,
+  "minapp-vscode.decorateType": {
+    "color": "#ba68c8"
+  },
+  "eslint.alwaysShowStatus": true,
+  "typescript.tsdk": "d:\\www\\saas-fe-xapp-ec\\node_modules\\typescript\\lib",
+  // prettyHtml遇到 <image></image>这种不是自闭合标签会格式化失败
+  // "minapp-vscode.prettyHtml": {
+  //   "printWidth": 180,
+  //   "singleQuote": false,
+  //   "wrapAttributes": false,
+  //   "sortAttributes": true,
+  //   "useTabs": false,
+  //   "tabWidth": 2,
+  //   "proseWrap": "preserve",
+  //   "usePrettier": true,
+  // },
+  // prettier遇到注释标签会格式化失败
+  // "minapp-vscode.prettier": { //prettier 更多参考https://prettier.io/docs/en/options.html
+  //   "singleQuote": false,
+  //   "printWidth": 180,
+  //   "wrapAttributes": false,
+  //   "sortAttributes": true,
+  //   "useTabs": false,
+  //   "tabWidth": 2,
+  //   "proseWrap": "preserve",
+  //   "usePrettier": true,
+  //   "parser": "html"
+  // },
+}
