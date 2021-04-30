@@ -4364,10 +4364,10 @@ ws@^7.4.4:
   resolved "https://registry.npm.taobao.org/ws/download/ws-7.4.5.tgz?cache=0&sync_timestamp=1618734243525&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fws%2Fdownload%2Fws-7.4.5.tgz#a484dd851e9beb6fdb420027e3885e8ce48986c1"
   integrity sha1-pITdhR6b62/bQgAn44hejOSJhsE=
 
-wxml-parse@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/wxml-parse/-/wxml-parse-0.2.0.tgz#540528c122d40c5ccaa7f4f4d166092997e1d436"
-  integrity sha512-2URNpKkDdLeboCLxtzk4AtPV40E+zwh4GcxFP+5gBA6geSE9TV2jrRGtu+dea8bkwrdTh8GR5MJMeDnybIxdTg==
+wxml-parse@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/wxml-parse/-/wxml-parse-0.2.2.tgz#3327d29261f4951be81a69c030ed1e06a2d8146e"
+  integrity sha512-WbSw8QOY3pAgZES4fpvNKbktvnWn6/RqdhVo9KpYXHI0bJLXlZWxfVhC3/x1s5Bt2CtjkYr9+cdMlQaUjZNIdQ==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
