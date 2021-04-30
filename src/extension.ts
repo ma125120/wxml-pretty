@@ -7,10 +7,9 @@ export function activate(context: vscode.ExtensionContext) {
     () => {
       const doc = vscode.window.activeTextEditor?.document;
       const { uri, getText, languageId, save, fileName } = doc || {};
-      
+
       save().then(() => {
-        const config = vscode.workspace
-          .getConfiguration();
+        const config = vscode.workspace.getConfiguration();
         const isOpen = config.get(`wxml-pretty.format`);
         const maxWidth: number = config.get(`wxml-pretty.maxWidth`);
         if (isOpen) {
@@ -24,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
             vscode.workspace.fs.writeFile(uri, Buffer.from(content, "utf8"));
           } catch (err) {
             vscode.window.showErrorMessage(err.message);
-          }  
+          }
         }
       });
 
