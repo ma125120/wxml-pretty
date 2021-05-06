@@ -654,10 +654,10 @@
   resolved "https://registry.npm.taobao.org/@types/stack-utils/download/@types/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha1-cDZkC04hzC8lmugmzoQ9J32tjP8=
 
-"@types/vscode@^1.55.0":
-  version "1.55.0"
-  resolved "https://registry.npm.taobao.org/@types/vscode/download/@types/vscode-1.55.0.tgz#58cfbebbd32b3e374e07e7858b1fd0e92b1a1d2b"
-  integrity sha1-WM++u9MrPjdOB+eFix/Q6SsaHSs=
+"@types/vscode@1.50.0":
+  version "1.50.0"
+  resolved "http://npm.weimob.com:80/@types%2fvscode/-/vscode-1.50.0.tgz#9f409d9dce22ebc11e2fcdd28fabd1917a961bb7"
+  integrity sha1-n0Cdnc4i68EeL83Sj6vRkXqWG7c=
 
 "@types/yargs-parser@*":
   version "20.2.0"
