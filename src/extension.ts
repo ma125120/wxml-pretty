@@ -1,40 +1,22 @@
-import { parse, generate } from "wxml-parse";
-import * as vscode from "vscode";
+import { languages, ExtensionContext, commands } from "vscode";
+import { WxmlFormater } from "./plugins/wxml";
 
-export function activate(context: vscode.ExtensionContext) {
-  const disposable = vscode.commands.registerCommand(
-    "wxml-pretty.format",
-    () => {
-      const doc = vscode.window.activeTextEditor?.document;
-      const { uri, getText, languageId, save, fileName } = doc || {};
+export function activate(context: ExtensionContext) {
+  const wxml = "wxml";
+  const formater = new WxmlFormater();
 
-      save().then(() => {
-        const config = vscode.workspace.getConfiguration();
-        const isOpen = config.get(`wxml-pretty.format`);
-        const maxWidth: number = config.get(`wxml-pretty.maxWidth`);
-        if (isOpen) {
-          if (languageId !== "wxml" && !/\.wxml$/g.test(fileName)) {
-            return;
-          }
-
-          try {
-            const ast = parse(getText());
-            const content = generate(ast, { compress: false, maxWidth });
-            vscode.workspace.fs.writeFile(uri, Buffer.from(content, "utf8"));
-          } catch (err) {
-            vscode.window.showErrorMessage(err.message);
-          }
-        }
+  context.subscriptions.push(
+    // 格式化
+    languages.registerDocumentFormattingEditProvider(wxml, formater),
+    languages.registerDocumentRangeFormattingEditProvider(wxml, formater),
+    commands.registerCommand(`wxml-pretty.format`, () => {
+      commands.executeCommand(`editor.action.formatDocument`).then(() => {
+        commands.executeCommand(`workbench.action.files.save`);
       });
-
-      // debugger;
-      // Display a message box to the user
-      // vscode.window.showInformationMessage("wxml 已经启动");
-    }
+    })
   );
-
-  context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 export function deactivate() {}

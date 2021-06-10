@@ -9,7 +9,7 @@
     "wxml",
     "pretty"
   ],
-  "version": "0.2.3",
+  "version": "1.0.0",
   "files": [
     "out"
   ],
@@ -20,7 +20,6 @@
     "Other"
   ],
   "activationEvents": [
-    "*",
     "onLanguage:wxml"
   ],
   "main": "./out/extension.js",
@@ -30,8 +29,8 @@
       "properties": {
         "wxml-pretty.format": {
           "type": "boolean",
-          "default": false,
-          "description": "是否在保存时，自动格式化wxml文件"
+          "default": true,
+          "description": "是否在保存时，自动格式化wxml文件；默认启用"
         },
         "wxml-pretty.maxWidth": {
           "type": "number",
@@ -51,7 +50,7 @@
         "command": "wxml-pretty.format",
         "key": "ctrl+s",
         "mac": "cmd+s",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == wxml"
       }
     ]
   },

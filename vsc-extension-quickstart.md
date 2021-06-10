@@ -1,5 +1,5 @@
 # Welcome to your VS Code Extension
-
+https://code.visualstudio.com/docs/getstarted/keybindings
 ## What's in the folder
 
 * This folder contains all of the files necessary for your extension.

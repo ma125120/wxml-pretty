@@ -19,15 +19,24 @@
 直接在 vs code 插件扩展搜索 ``` wxml-pretty ```，安装即可
 
 ## 使用
-保存格式化默认是关闭的，主要是考虑到可能已经有其他格式化的扩展，避免冲突。
+保存自动格式化默认开启，如果不需要格式化，可以在设置 -> wxml-pretty.format设置为 false。
 
-可以在设置 -> wxml-pretty.format设置为true。
 
-或在当前工作目录下的 ```.vscode/settings.json``` 文件中添加
+默认的配置项如下：
 ```json
 {
-  "wxml-pretty.format": true,
+  "wxml-pretty.format": true, // 是否开启格式化wxml
   "wxml-pretty.maxWidth": 120, // 宽度大于该值时将会换行
 }
 ```
-开启保存自动格式化
+开启保存自动格式化(上方为默认选项)
+
+## Q&A
+
+### 1. 保存时格式不正确
+
+答案： 需要 **选择正确的格式化工具**，
+  1. 在 ```wxml```文件中，按下 ```ctrl + shift + P```，打开命令面板
+  2. 输入 ```format```，选择 ```Format Document With...```
+  3. 选择最下方的 ```Configure Default Formatter...```
+  4. 最后选中```wxml-pretty```即可。
